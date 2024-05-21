@@ -26,7 +26,9 @@
   color: hsl(210, 10%, 95%);
 }
 
-.contenu__categories {
-  display: flex;
-  flex-wrap: wrap;
+.contenu__categories h6 {
+  margin: 0;
+  margin-bottom: 0.5rem;
+  margin-top: 1.5rem;
+  margin-left: 1rem;
 }/*# sourceMappingURL=style.css.map */

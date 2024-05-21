@@ -30,7 +30,11 @@
     border: 2px solid hsl(30, 80%, 50%);
     color: hsl(210, 10%, 95%);
 }
-.contenu__categories {
-    display: flex;
-    flex-wrap: wrap;
+.contenu__categories h6 {
+    //display: flex;
+    //flex-wrap: wrap;
+    margin: 0;
+    margin-bottom: 0.5rem;
+    margin-top: 1.5rem;
+    margin-left: 1rem;
 }

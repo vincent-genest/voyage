@@ -42,13 +42,33 @@ function creation_destinations(){
         if ($categorie->parent == 0) {
             unset($categories[$key]);
         }
+        if ($categorie->name == 'Non catégorisé') {
+            unset($categories[$key]);
+        }
     }
-    $contenu = '<div class="contenu__categories">';
+    //On met dans contenu le div type qui contient les catégories qui ne commencent pas par voyage
+    $contenu = ' <div class="contenu__categories categories__type">
+    <h6>Taille de voyages</h6>';
     foreach ($categories as $categorie) {
         $nom_categorie = $categorie->name;
         $id_categorie = $categorie->term_id;
-        $contenu .= '<button class="bouton__categorie" id="cat_' . $id_categorie . '">' . $nom_categorie . '</button>';
+        if (substr($nom_categorie, 0, 6) != 'Voyage') {
+            $contenu .= '<button class="bouton__categorie" id="cat_' . $id_categorie . '">' . $nom_categorie . '</button>';
+        }
+        //$contenu .= '<button class="bouton__categorie" id="cat_' . $id_categorie . '">' . $nom_categorie . '</button>';
     }
+
+    //On ajoute dans contenu le div taille qui contient les catégories qui ne commencent pas par voyage
+    $contenu .= '</div>  <div class="contenu__categories categories__taille">
+    <h6>Taille de voyages</h6>';
+    foreach ($categories as $categorie) {
+        $nom_categorie = $categorie->name;
+        $id_categorie = $categorie->term_id;
+        if (substr($nom_categorie, 0, 6) == 'Voyage') {
+            $contenu .= '<button class="bouton__categorie" id="cat_' . $id_categorie . '">' . $nom_categorie . '</button>';
+        }
+    }
+    //On ajoute dans contenu le div restapi
     $contenu .= '</div> 
     <div class="contenu__restapi section__destinations"></div>';
     return $contenu;
