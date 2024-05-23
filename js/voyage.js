@@ -82,13 +82,11 @@
                     }
 
                     carte.innerHTML = `
-                    <div class="carte">
                     <img src="${image}" alt="${titre}">
                     <h4>${titre}</h4>
                     <ul class="post-categories"></ul>
                     <p>${contenu}</p>
                     <a href="${lien}">Voir plus</a>
-                    </div>
                     `;
 
                     restapi.appendChild(carte);
